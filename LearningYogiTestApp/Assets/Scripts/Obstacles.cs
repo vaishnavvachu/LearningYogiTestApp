@@ -5,7 +5,12 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     public float speed;
-    
+    private GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -15,8 +20,7 @@ public class Obstacles : MonoBehaviour
         if (Collider.CompareTag("Player"))
         {
             Collider.gameObject.SetActive(false);
-
-            //EndGame
+            gameManager.GameOver();
         }
     }
 }

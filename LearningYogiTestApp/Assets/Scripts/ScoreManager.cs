@@ -7,7 +7,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
 
-    private int score;
+    public int score;
     public float delayInDestroying;
     public TextMeshProUGUI scoreDisplay;
     public TextMeshProUGUI highScoreDisplay;
