@@ -5,13 +5,7 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     public float speed;
-    public float Lifetime;
-
-    private void Start()
-    {
-        Destroy(gameObject, Lifetime);
-    }
-
+    
     private void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
