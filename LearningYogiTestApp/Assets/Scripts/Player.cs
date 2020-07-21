@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Player movement control and 
 public class Player : MonoBehaviour
 {
     
-    public float jumpForce;
+    public float jumpForce;                                    //how high should he jump?
 
     private bool running, up, down, jumping;
     private Rigidbody2D playerRB;
-    private Animator animator;
+    private Animator animator;                                  //attach the animator controller to the player gameobject
     
     // Use this for initialization
     void Start()
@@ -25,6 +27,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Keep the player walking until he jumps
     void Update()
     {
 
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
         
     }
 
+    //show the walk animation
     void Movement()
     {
 
@@ -46,10 +50,14 @@ public class Player : MonoBehaviour
 
     }
 
+    //Show Jump Up animation when player taps on screen
+    //jump Up
+    //come down
+    //continue walking
     void Jump()
     {
         //Jump
-        if (Input.GetKeyDown(KeyCode.Space) && playerRB.velocity.y == 0)
+        if (Input.GetButton("Fire1") && playerRB.velocity.y == 0)
         {
             playerRB.AddForce(new Vector2(0, jumpForce));
 
