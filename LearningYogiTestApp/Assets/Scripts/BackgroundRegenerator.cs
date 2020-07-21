@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BackgroundRegenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public float speed;
+    public float EndPointXCoordinate;
+    public float StartingPointXCoordinate;
+
+    private void Update()
     {
-        
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (transform.position.x < EndPointXCoordinate)
+        {
+            Vector2 pos = new Vector2(StartingPointXCoordinate, transform.position.y);
+            transform.position = pos;
+        }
     }
 }
