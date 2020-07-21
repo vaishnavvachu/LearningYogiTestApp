@@ -10,9 +10,7 @@ public class Player : MonoBehaviour
     private bool running, up, down, jumping;
     private Rigidbody2D playerRB;
     private Animator animator;
-
-
-
+    
     // Use this for initialization
     void Start()
     {
@@ -38,8 +36,7 @@ public class Player : MonoBehaviour
         }
 
         Jump();
-
-
+        
     }
 
     void Movement()
