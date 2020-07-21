@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
     //Load the scene again to restart the game
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1f;
     }
 
     //Quit Application
